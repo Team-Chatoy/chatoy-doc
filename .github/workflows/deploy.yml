@@ -1,8 +1,8 @@
 name: Deploy
 
 on:
-  # push:
-  #   branches: ["master"]
+  push:
+    branches: ["master"]
   workflow_dispatch:
 
 permissions:
@@ -21,7 +21,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
       - name: Install Rust
         run: rustup toolchain install stable --profile minimal
