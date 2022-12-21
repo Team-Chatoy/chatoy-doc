@@ -7,7 +7,7 @@ Here are tables in the database.
 - **id**: `number` Each user has a unique id.
 - **username**: `string` User uses this name to sign in.
 - **nickname**: `string` This name will be displayed on the user information.
-- **password**: `string` Password hashed with BLAKE3[^BLAKE3] algorithm.
+- **password**: `string` Password hashed with BLAKE3[^BLAKE3] algorithm. A hex string of length 64.
 - **status**: `number`
   - `0`: The account is normal.
   - `1`: The user actively destroyed the account.

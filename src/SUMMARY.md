@@ -8,4 +8,5 @@
   - [UI / Java](./client/java/index.md)
 
 - [Server](./server/index.md)
+  - [Web API](./server/api.md)
   - [Database](./server/database.md)
