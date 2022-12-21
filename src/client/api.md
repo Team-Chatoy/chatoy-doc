@@ -1,8 +1,8 @@
 # General API
 
-Here are some APIs that are widely used in the program.
+Here are some APIs that are widely used in the client.
 
-> Note: When data can **NOT** be exchanged between parts of program in binary form, please use JSON consistently.
+> Note: When data can **NOT** be exchanged in binary form, please use JSON consistently.
 
 ## Message
 
@@ -20,3 +20,5 @@ The JSON representation of a valid _Text Message_ might look like this:
 ```json
 {"type":"text","content":"Hello, world!"}
 ```
+
+> TODO...
