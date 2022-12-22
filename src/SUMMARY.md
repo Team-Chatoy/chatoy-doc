@@ -9,4 +9,5 @@
 
 - [Server](./server/index.md)
   - [Web API](./server/api.md)
+  - [WebSocket](./server/ws.md)
   - [Database](./server/database.md)
