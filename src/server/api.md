@@ -69,7 +69,7 @@ You will join the room automatically after creating it.
 
 ### Response
 
-`Room` THe room you just created.
+- **id**: `number` The id of the room you created.
 
 ---
 
@@ -94,3 +94,16 @@ None
 ### Response
 
 `Member[]` All *member*s.
+
+---
+
+**POST** `/rooms/:id/join` Join a room.
+
+### Payload
+
+- **token**: `string` The token of the user.
+
+### Response
+
+- **code**: `number` The status code of the response. It will be `0` when the request succeeds.
+- **msg**: `string` The message of the response. It will be empty when the request succeeds.
