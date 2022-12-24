@@ -107,3 +107,39 @@ None
 
 - **code**: `number` The status code of the response. It will be `0` when the request succeeds.
 - **msg**: `string` The message of the response. It will be empty when the request succeeds.
+
+---
+
+**GET** `/users/:id` Get information of a user.
+
+### Param
+
+None
+
+### Response
+
+`User` The user you want to get.
+
+---
+
+**GET** `/rooms/:id` Get information of a room.
+
+### Param
+
+None
+
+### Response
+
+`Room` The room you want to get.
+
+---
+
+**GET** `/rooms/me` List all rooms you joined.
+
+### Headers
+
+- **Authorization**: `Basic <token>` The token of the user.
+
+### Response
+
+`Room[]` All rooms you joined.
