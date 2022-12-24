@@ -13,7 +13,7 @@ After establishing the websocket connection with the server `/ws`, the client fi
 {"type":"Auth","token":"0123456789abcdef"}
 ```
 
-### Response (WIP)
+### Response
 
 - **type**: `Auth` This message is the response of the auth message.
 - **code**: `number` The status code of the response. It will be `0` if the auth succeeds.
