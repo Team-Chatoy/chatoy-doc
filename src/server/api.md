@@ -138,7 +138,7 @@ None
 
 ### Headers
 
-- **Authorization**: `Basic <token>` The token of the user.
+- **Authorization**: `Bearer <token>` The token of the user.
 
 ### Response
 
