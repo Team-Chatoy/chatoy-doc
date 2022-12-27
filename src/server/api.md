@@ -1,145 +1,116 @@
 # Web API
 
-Here is the API provided to the client.
+Here are the APIs provided to the client.
 
-> Note: When an API is preceded by ⚠️, this API is only for debugging and can **NOT** be used in the production environment!
+> Note: When an API is preceded by `⚠️`, this API is only for debugging and can **NOT** be used in the production environment!
 
 ## User
 
-**POST** `/login` Login account.
+### Login
 
-### Payload
+**POST** `/login` Login with username and password.
 
-- **username**: `string` User will use this name to sign in.
-- **password**: `string` User will use this password to sign in.
+- Payload
+  - **username**: `string` User will use this name to sign in.
+  - **password**: `string` User will use this password to sign in.
+- Response
+  - **code**: `number` The status code of the response. It will be `0` when the request succeeds.
+  - **msg**: `string` The message of the response. It will be a *token* when the request succeeds.
 
-### Response
-
-- **code**: `number` The status code of the response. It will be `0` when the request succeeds.
-- **msg**: `string` The message of the response. It will be a *token* when the request succeeds.
-
----
+### Register
 
 **POST** `/users` Register a new account.
 
-### Payload
+- Payload
+  - **username**: `string` User will use this name to sign in.
+  - **password**: `string` User will use this password to sign in.
+- Response
+  - **code**: `number` The status code of the response. It will be `0` when the request succeeds.
+  - **msg**: `string` The message of the response. It will be empty when the request succeeds.
 
-- **username**: `string` User will use this name to sign in.
-- **password**: `string` User will use this password to sign in.
+### ⚠️ List users
 
-### Response
+**GET** `/users` List all users, including deleted and banned users.
 
-- **code**: `number` The status code of the response. It will be `0` when the request succeeds.
-- **msg**: `string` The message of the response. It will be empty when the request succeeds.
+- Param
+  - *None*
+- Response
+  - `User[]` All users.
 
----
+### ⚠️ List sessions
 
-⚠️ **GET** `/users` List all users.
+**GET** `/sessions` List all sessions.
 
-### Param
+- Param
+  - *None*
+- Response
+  - `Session[]` All sessions.
 
-None
+### Get user info
 
-### Response
+**GET** `/users/:id` Get information of a user.
 
-`User[]` All users, including deleted and banned users.
+- Param
+  - *None*
+- Response
+  - `User` The user you want to get.
 
----
+## Room
 
-⚠️ **GET** `/sessions` List all sessions.
-
-### Param
-
-None
-
-### Response
-
-`Session[]` All sessions.
-
----
+### Create new room
 
 **POST** `/rooms` Create a new room.
 
 You will join the room automatically after creating it.
 
-### Payload
+- Payload
+  - **token**: `string` The token of the user.
+  - **name**: `string` The name of the room.
+- Response
+  - **id**: `number` The id of the room you created.
 
-- **token**: `string` The token of the user.
-- **name**: `string` The name of the room.
+### ⚠️ List rooms
 
-### Response
+**GET** `/rooms` List all rooms.
 
-- **id**: `number` The id of the room you created.
+- Param
+  - *None*
+- Response
+  - `Room[]` All rooms.
 
----
+### ⚠️ List *member*s
 
-⚠️ **GET** `/rooms` List all rooms.
+**GET** `/members` List all *member*s.
 
-### Param
+- Param
+  - *None*
+- Response
+  - `Member[]` All *member*s.
 
-None
-
-### Response
-
-`Room[]` All rooms.
-
----
-
-⚠️ **GET** `/members` List all *member*s.
-
-### Param
-
-None
-
-### Response
-
-`Member[]` All *member*s.
-
----
+### Join room
 
 **POST** `/rooms/:id/join` Join a room.
 
-### Payload
+- Payload
+  - **token**: `string` The token of the user.
+- Response
+  - **code**: `number` The status code of the response. It will be `0` when the request succeeds.
+  - **msg**: `string` The message of the response. It will be empty when the request succeeds.
 
-- **token**: `string` The token of the user.
-
-### Response
-
-- **code**: `number` The status code of the response. It will be `0` when the request succeeds.
-- **msg**: `string` The message of the response. It will be empty when the request succeeds.
-
----
-
-**GET** `/users/:id` Get information of a user.
-
-### Param
-
-None
-
-### Response
-
-`User` The user you want to get.
-
----
+### Get room info
 
 **GET** `/rooms/:id` Get information of a room.
 
-### Param
+- Param
+  - *None*
+- Response
+  - `Room` The room you want to get.
 
-None
-
-### Response
-
-`Room` The room you want to get.
-
----
+### Get user's rooms
 
 **GET** `/rooms/me` List all rooms you joined.
 
-### Headers
-
-- **Authorization**: `Bearer <token>` The token of the user.
-
-### Response
-
-`Room[]` All rooms you joined.
+- Headers
+  - **Authorization**: `Bearer <token>` The token of the user.
+- Response
+  - `Room[]` All rooms you joined.
