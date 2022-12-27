@@ -16,6 +16,7 @@ Here are the APIs provided to the client.
 - Response
   - **code**: `number` The status code of the response. It will be `0` when the request succeeds.
   - **msg**: `string` The message of the response. It will be a *token* when the request succeeds.
+  - **user**: `User` The information of the user you logged in. It will be `null` when the request fails.
 
 ### Register
 
