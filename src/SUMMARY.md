@@ -2,12 +2,14 @@
 
 [Introduction](./intro.md)
 
-- [Client](./client/index.md)
-  - [General API](./client/api.md)
-  - [Core / C++](./client/cpp/index.md)
-  - [UI / Java](./client/java/index.md)
+# Client
 
-- [Server](./server/index.md)
-  - [Web API](./server/api.md)
-  - [WebSocket](./server/ws.md)
-  - [Database](./server/database.md)
+- [General API]()
+- [Core / C++]()
+- [UI / Java]()
+
+# Server
+
+- [Web API](./server/api.md)
+- [WebSocket](./server/ws.md)
+- [Database](./server/database.md)
